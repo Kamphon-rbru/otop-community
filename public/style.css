@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Sarabun:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* ใช้ Sarabun เป็นฟอนต์หลักของเนื้อหา */
+  font-family: 'Sarabun', sans-serif;
+  line-height: 1.6;
+  color: #2D2421;
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+li { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* Palette: ไทยวิจิตรโมเดิร์น */
+:root {
+  --primary: #D4A359;    /* ทองดอกคูณ */
+  --accent: #B23A22;     /* แดงชาด */
+  --light: #F4EAD3;      /* ครีมนวล */
+  --dark: #3D2314;       /* น้ำตาลไม้สักเข้ม */
+  --bg: #FAF6EF;         /* ขาวผ่องอมครีม */
+  --gold-glow: #E5C378;  
+  --border-gold: #E2C285;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  background: linear-gradient(185deg, var(--dark) 0%, #2A170C 100%);
+  color: var(--light);
+  padding: 1.2rem 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--primary);
+  box-shadow: 0 4px 15px rgba(61, 35, 20, 0.25);
+}
+
+.logo {
+  /* ใช้ฟอนต์ Charm เพิ่มความอ่อนช้อยแบบไทยที่โลโก้ */
+  font-family: 'Charm', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+  display: flex; 
+  gap: 2rem;
+}
+
+.menu a {
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.menu a:hover {
+  color: var(--gold-glow);
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-img {
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 10px 25px rgba(61, 35, 20, 0.15);
+  border: 3px solid var(--border-gold);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  /* หัวข้อหลักใช้ฟอนต์ Charm อ่อนช้อย */
+  font-family: 'Charm', cursive;
+  font-size: 3rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-text p {
+  color: #52433D;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #8C2A16 100%);
+  color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(178, 58, 34, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover { 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(178, 58, 34, 0.4);
+  background: linear-gradient(135deg, #C4432A 0%, var(--accent) 100%);
+}
+
+/* --- CARDS SECTION --- */
+.cards-section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  /* หัวข้อเซกชันใช้ฟอนต์ Charm */
+  font-family: 'Charm', cursive;
+  text-align: center;
+  font-size: 2.6rem;
+  color: var(--dark);
+  margin-bottom: 2.5rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: '❖';
+  display: block;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem;
+  color: var(--primary);
+  margin-top: 0.2rem;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 1 1 280px;
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #EFE6D5;
+  box-shadow: 0 4px 12px rgba(61, 35, 20, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-gold);
+  box-shadow: 0 8px 20px rgba(61, 35, 20, 0.12);
+}
+
+.card img {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.card p {
+  color: #665650;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.category-badge {
+  padding: 0.3rem 0.8rem;
+  background: var(--light);
+  color: var(--dark);
+  border: 1px solid var(--border-gold);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.producer, .contact {
+  color: #75635C;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed #EFE6D5;
+}
+
+.delete-btn {
+  padding: 0.5rem 1rem;
+  background: #A8321A;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #872511;
+}
+
+/* --- ADD FORM SECTION --- */
+.add-form-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 6px 18px rgba(61, 35, 20, 0.08);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #E2D7C3;
+  border-radius: 8px;
+  background-color: #FCFDF9;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--dark);
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212, 163, 89, 0.2);
+}
+
+.submit-btn {
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--primary) 0%, #B8863B 100%);
+  color: var(--dark);
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 10px rgba(212, 163, 89, 0.3);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #E5C378 0%, var(--primary) 100%);
+  transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+.footer {
+  background: linear-gradient(185deg, var(--dark) 0%, #1F1008 100%);
+  color: var(--light);
+  padding: 3rem 2rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 3px solid var(--primary);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h4 {
+  font-family: 'Charm', cursive;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.footer-col p { 
+  margin-bottom: 0.5rem; 
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(244, 234, 211, 0.1);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image.no-image {
+  background: #F0C88E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #65463E;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  color: #65463E;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.modal-close:hover {
+  background: #F0C88E;
+  color: #65463E;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-footer button {
+  flex: 1;
+}
+
+.cancel-btn {
+  padding: 0.9rem;
+  background: white;
+  color: #65463E;
+  border: 2px solid #F0C88E;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cancel-btn:hover {
+  background: #F0C88E;
+}
+
+/* Edit button on card */
+.edit-btn {
+  padding: 0.5rem 1rem;
+  background: #FB9E09;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.edit-btn:hover {
+  background: #D13704;
+}
